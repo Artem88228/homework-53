@@ -9,10 +9,25 @@ const App = () => {
         {text: 'Walk with dog', id: '2'},
         {text: 'Do homework', id: '3'}
     ])
+    const [currentTask, setCurrentTask] = useState<string>('');
+
+    const handleAddTask = () => {
+        const newTask = {
+            text: currentTask,
+            id: Date.now().toString(),
+        };
+
+        setTasks([...tasks, newTask]);
+        setCurrentTask('');
+    };
 
   return (
     <>
-        <AddTaskForm />
+        <AddTaskForm
+        currentTask={currentTask}
+        setCurrentTask={setCurrentTask}
+        onAdd={handleAddTask}
+        />
             {tasks.map((task) => {
               return  <Task key={task.id} task={task.text} />
             })}
