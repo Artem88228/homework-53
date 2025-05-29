@@ -12,6 +12,9 @@ const App = () => {
     const [currentTask, setCurrentTask] = useState<string>('');
 
     const handleAddTask = () => {
+
+        if (currentTask.trim() === '') return alert('Please enter a task');
+
         const newTask = {
             text: currentTask,
             id: Date.now().toString(),
