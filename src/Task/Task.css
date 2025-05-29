@@ -1,0 +1,16 @@
+.task-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 500px;
+    background: whitesmoke;
+    color: black;
+    font-weight: bold;
+}
+.task-text {
+    font-size: 18px;
+}
+.task-button {
+    padding: 10px 20px;
+}
