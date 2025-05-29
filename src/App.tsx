@@ -21,6 +21,10 @@ const App = () => {
         setCurrentTask('');
     };
 
+    const handleDeleteTask = (id: string) => {
+        setTasks(tasks.filter(task => task.id !== id));
+    };
+
   return (
     <>
         <AddTaskForm
@@ -29,7 +33,7 @@ const App = () => {
         onAdd={handleAddTask}
         />
             {tasks.map((task) => {
-              return  <Task key={task.id} task={task.text} />
+              return  <Task key={task.id} task={task.text} id={task.id} onDelete={handleDeleteTask} />
             })}
     </>
   )
